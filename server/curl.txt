@@ -1,0 +1,29 @@
+
+
+# Create item
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{
+      "title": "The Tale of the Giant Pumpkin",
+      "element": "exposition",
+      "sceneName": "Village of the Valley",
+      "description": "Little Jo lives a peaceful life as an orphan and takes care of herself with the help of all the friendly villagers. She cooks the best hog roast in town but can't recall when she learned how.."
+    }' \
+  http://localhost:8080/api/plots
+
+# Update item
+curl --header "Content-Type: application/json" \
+  --request PUT \
+  --data '{
+      "title": "The Tale of the Giant Pumpkin",
+      "name": "Bartholomew the Great",
+      "race": "Warlock",
+      "description": "A master of the magical arts. This wizard found a portal to longetvity and has been studying spells for thousands of years. Some say he has discovered how to manipulate time and space, but refrains due to the grave effects it has on the future."
+    }' \
+  http://localhost:8080/api/characters/{id}
+
+
+ # Update item
+curl --header "Content-Type: application/json" \
+  --request DELETE \
+  http://localhost:8080/api/characters/{id}   
